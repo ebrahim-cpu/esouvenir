@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -405,6 +405,7 @@
     <Content Include="Sou_Souvenir_Image_User.aspx" />
     <Content Include="Sou_Souvenir_Item_User5.aspx" />
     <Content Include="Sou_StockInOutHistory.aspx" />
+    <Content Include="Sou_Report.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -620,6 +621,13 @@
     </Compile>
     <Compile Include="Sou_StockInOutHistory.aspx.designer.cs">
       <DependentUpon>Sou_StockInOutHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sou_Report.aspx.cs">
+      <DependentUpon>Sou_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sou_Report.aspx.designer.cs">
+      <DependentUpon>Sou_Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

@@ -154,6 +154,7 @@
         <a href="Sou_Admin_Request.aspx" class="w3-bar-item w3-button">5. Admin Request </a>
 <%--        <a href="Sou_Senarai_Item_Admin_Request.aspx" class="w3-bar-item w3-button">6. Item List (Admin Request)</a>--%>
         <a href="Sou_StockInOutHistory.aspx" class="w3-bar-item w3-button">6. Stock Movement History</a>
+        <a href="Sou_Report.aspx" class="w3-bar-item w3-button">7. Reports</a>
 
         <div style="margin-top: 30px;">
             <p style="font-size: 16px; font-weight: bold; color: deepskyblue;">

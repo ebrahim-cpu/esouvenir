@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_Admin_Penambahan_Kuantiti.aspx.cs" Inherits="eSouvenir.Sou_Admin_Penambahan_Kuantiti" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_Admin_Penambahan_Kuantiti.aspx.cs" Inherits="eSouvenir.Sou_Admin_Penambahan_Kuantiti" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -227,6 +227,7 @@
         <a href="Sou_Admin_Request.aspx" class="w3-bar-item w3-button">5. Admin Request </a>
 <%--        <a href="Sou_Senarai_Item_Admin_Request.aspx" class="w3-bar-item w3-button">6. Item List (Admin Request)</a>--%>
         <a href="Sou_StockInOutHistory.aspx" class="w3-bar-item w3-button">6. Stock Movement History</a>
+        <a href="Sou_Report.aspx" class="w3-bar-item w3-button">7. Reports</a>
         <div style="margin-top: 30px;">
             <p style="font-size: 16px; font-weight: bold; color: deepskyblue;">
                 <asp:Literal ID="welcomeMessage" runat="server"></asp:Literal>
