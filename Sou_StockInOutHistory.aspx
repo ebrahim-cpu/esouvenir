@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_StockInOutHistory.aspx.cs" Inherits="eSouvenir.StockInOutHistory" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_StockInOutHistory.aspx.cs" Inherits="eSouvenir.StockInOutHistory" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
