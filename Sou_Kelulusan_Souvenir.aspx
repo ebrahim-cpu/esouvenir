@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_Kelulusan_Souvenir.aspx.cs" Inherits="eSouvenir.Sou_Kelulusan_Souvenir" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_Kelulusan_Souvenir.aspx.cs" Inherits="eSouvenir.Sou_Kelulusan_Souvenir" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -212,7 +212,17 @@
                                     </button>
                             </div>
                         </div>
-                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <span style="color: white; margin-right: 10px; white-space: nowrap;">Page Size:</span>
+                                <asp:DropDownList ID="ddlPageSize" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPageSize_SelectedIndexChanged" CssClass="form-control thick-border" Style="width: 100px;">
+                                    <asp:ListItem Value="50">50</asp:ListItem>
+                                    <asp:ListItem Value="100">100</asp:ListItem>
+                                    <asp:ListItem Value="150">150</asp:ListItem>
+                                    <asp:ListItem Value="200">200</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <!-- Search Textbox -->
                             <div class="search-container">
@@ -225,7 +235,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <asp:GridView ID="GridView1" runat="server" CssClass="table table-3d table-striped table-bordered" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="3" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" BackColor="White" BorderColor="#999999" BorderWidth="1px" GridLines="Vertical" PageSize="300" BorderStyle="None" OnRowCommand="GridView1_RowCommand">
+                             <asp:GridView ID="GridView1" runat="server" CssClass="table table-3d table-striped table-bordered" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" CellPadding="3" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" BackColor="White" BorderColor="#999999" BorderWidth="1px" GridLines="Vertical" AllowPaging="True" PageSize="50" OnPageIndexChanging="GridView1_PageIndexChanging" BorderStyle="None" OnRowCommand="GridView1_RowCommand">
                                 <AlternatingRowStyle BackColor="#DCDCDC" />
                                 <Columns>
                                     <asp:BoundField DataField="Id" HeaderText="No" InsertVisible="False" ReadOnly="True" SortExpression="Id" />

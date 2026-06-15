@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -24,6 +24,7 @@ namespace eSouvenir
             if (!IsPostBack)
             {
                 ViewState["StockUpdated"] = false;
+                GridView1.PageSize = 50;
             }
             string id = Request.QueryString["id"];
             if (!string.IsNullOrEmpty(id))
@@ -296,6 +297,16 @@ namespace eSouvenir
                 // Redirect to Check_Cancel_Description.aspx and pass the Id parameter
                 Response.Redirect(string.Format("Check_Cancel_Description.aspx?id={0}", id));
             }
+        }
+        protected void ddlPageSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridView1.PageSize = Convert.ToInt32(ddlPageSize.SelectedValue);
+            GridView1.PageIndex = 0;
+        }
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.PageSize = Convert.ToInt32(ddlPageSize.SelectedValue);
         }
     }
 }
