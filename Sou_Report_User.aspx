@@ -142,7 +142,7 @@
                 <div class="glass-card">
                     <div class="row align-items-center mb-4">
                         <div class="col-md-6">
-                            <h3 style="font-weight: 600; margin: 0; color: #ffeb3b;">My Monthly Requested Souvenirs Quantity</h3>
+                            <h3 style="font-weight: 600; margin: 0; color: #ffeb3b;">Monthly Requested Souvenirs Quantity</h3>
                         </div>
                         <div class="col-md-6 text-md-right mt-3 mt-md-0">
                             <span style="font-size: 1.1rem; margin-right: 10px;">Select Year:</span>
