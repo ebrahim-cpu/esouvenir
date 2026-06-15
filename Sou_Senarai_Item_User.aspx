@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_Senarai_Item_User.aspx.cs" Inherits="eSouvenir.Sou_Senarai_Item_User" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_Senarai_Item_User.aspx.cs" Inherits="eSouvenir.Sou_Senarai_Item_User" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -215,6 +215,7 @@
 <%--        <img src="path_to_your_image.jpg" alt="" style="width: 100%; max-height: 200px;" />--%>
         <a href="Sou_Senarai_Item_User.aspx" class="w3-bar-item w3-button">1. List Item </a>
         <a href="Sou_Keputusan_Permohonan_User.aspx" class="w3-bar-item w3-button">2. Order Status</a>
+        <a href="Sou_Report_User.aspx" class="w3-bar-item w3-button">3. Reports</a>
         <div style="margin-top: 30px;">
             <p style="font-size: 16px; font-weight: bold; color: deepskyblue;">
                 <asp:Literal ID="welcomeMessage" runat="server"></asp:Literal>

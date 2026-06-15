@@ -406,6 +406,7 @@
     <Content Include="Sou_Souvenir_Item_User5.aspx" />
     <Content Include="Sou_StockInOutHistory.aspx" />
     <Content Include="Sou_Report.aspx" />
+    <Content Include="Sou_Report_User.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -628,6 +629,13 @@
     </Compile>
     <Compile Include="Sou_Report.aspx.designer.cs">
       <DependentUpon>Sou_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sou_Report_User.aspx.cs">
+      <DependentUpon>Sou_Report_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sou_Report_User.aspx.designer.cs">
+      <DependentUpon>Sou_Report_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
