@@ -106,7 +106,7 @@ namespace eSouvenir
                                 int totalQty = Convert.ToInt32(reader["TotalQty"]);
                                 if (month >= 1 && month <= 12)
                                 {
-                                    monthlyTotals[month - 1] = totalQty;
+                                    monthlyTotals[month - 1] = Math.Abs(totalQty);
                                 }
                             }
                         }

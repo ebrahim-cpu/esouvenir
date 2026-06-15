@@ -146,7 +146,7 @@
                 <div class="glass-card">
                     <div class="row align-items-center mb-4">
                         <div class="col-md-6">
-                            <h3 style="font-weight: 600; margin: 0; color: #00bcd4;">Monthly Requested Souvenirs Quantity</h3>
+                            <h3 style="font-weight: 600; margin: 0; color: #ffeb3b;">Monthly Requested Souvenirs Quantity</h3>
                         </div>
                         <div class="col-md-6 text-md-right mt-3 mt-md-0">
                             <span style="font-size: 1.1rem; margin-right: 10px;">Select Year:</span>
@@ -168,12 +168,12 @@
             var ctx = document.getElementById('monthlyChart').getContext('2d');
             
             var gradient = ctx.createLinearGradient(0, 0, 0, 350);
-            gradient.addColorStop(0, 'rgba(0, 188, 212, 0.9)');
-            gradient.addColorStop(1, 'rgba(156, 39, 176, 0.3)');
+            gradient.addColorStop(0, 'rgba(255, 235, 59, 0.95)'); // Yellow
+            gradient.addColorStop(1, 'rgba(255, 152, 0, 0.35)');  // Orange-Yellow
 
             var hoverGradient = ctx.createLinearGradient(0, 0, 0, 350);
-            hoverGradient.addColorStop(0, 'rgba(0, 229, 255, 1)');
-            hoverGradient.addColorStop(1, 'rgba(224, 64, 251, 0.5)');
+            hoverGradient.addColorStop(0, 'rgba(255, 255, 0, 1)');    // Vivid Yellow
+            hoverGradient.addColorStop(1, 'rgba(255, 193, 7, 0.6)');   // Amber
 
             var labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             
@@ -188,7 +188,7 @@
                         data: chartData,
                         backgroundColor: gradient,
                         hoverBackgroundColor: hoverGradient,
-                        borderColor: '#00bcd4',
+                        borderColor: '#ffeb3b',
                         borderWidth: 1,
                         borderRadius: 6,
                         borderSkipped: false
