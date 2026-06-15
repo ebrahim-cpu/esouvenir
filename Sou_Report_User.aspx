@@ -180,7 +180,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Quantity Requested By Me',
+                        label: 'Quantity Requested',
                         data: chartData,
                         backgroundColor: gradient,
                         hoverBackgroundColor: hoverGradient,
