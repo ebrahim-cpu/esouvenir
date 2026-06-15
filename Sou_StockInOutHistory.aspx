@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_StockInOutHistory.aspx.cs" Inherits="eSouvenir.StockInOutHistory" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sou_StockInOutHistory.aspx.cs" Inherits="eSouvenir.StockInOutHistory" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -193,6 +193,20 @@
             document.body.innerHTML = originalContents;
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function exportToPdf() {
+            var element = document.getElementById('GridView1');
+            var opt = {
+                margin:       0.3,
+                filename:     'StockMovementHistory.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'legal', orientation: 'landscape' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
 </head>
 <body>
     <%--sidebar editor--%>
@@ -252,18 +266,29 @@
             <br />
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
-                        <%--     btn excel n btn print--%>
+                    <div class="col-md-4">
                         <div class="search-container">
-                            <asp:Button ID="Button1" runat="server" Text="Export to Excel" OnClick="BtnExcel_Click" CssClass="btn btn-primary " Style="width: 130px; height: 40px;" />
+                            <asp:Button ID="Button1" runat="server" Text="Export to Excel" OnClick="BtnExcel_Click" CssClass="btn btn-primary" Style="width: 130px; height: 40px;" />
                             &nbsp;
-                               <button class="auto-style2" onclick="printGridView()">
-                                   <img src="./Images/print.png" alt="Print Icon" width="30" height="30" />
-                               </button>
+                            <button id="btnPdf" class="btn btn-danger" onclick="exportToPdf(); return false;" style="width: 130px; height: 40px;">Export to PDF</button>
+                            &nbsp;
+                            <button class="auto-style2" onclick="printGridView()">
+                                <img src="./Images/print.png" alt="Print Icon" width="30" height="30" />
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <%--   Search Textbox --%>
+                    <div class="col-md-4">
+                        <div class="search-container justify-content-center">
+                            <span style="color: white; margin-right: 10px; white-space: nowrap;">Page Size:</span>
+                            <asp:DropDownList ID="ddlPageSize" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPageSize_SelectedIndexChanged" CssClass="form-control thick-border" Style="width: 100px;">
+                                <asp:ListItem Value="25">25</asp:ListItem>
+                                <asp:ListItem Value="50">50</asp:ListItem>
+                                <asp:ListItem Value="100">100</asp:ListItem>
+                                <asp:ListItem Value="150">150</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="search-container">
                             <input type="text" id="txtSearch" class="form-control" placeholder="Search Here" onkeyup="searchGridView()" />
                         </div>
@@ -273,7 +298,7 @@
             <div class="container" style="background-image: url('/Images/.jpg');">
                 <%-- Background 1 atas --%>
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table table-3d table-striped table-bordered" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" GridLines="None" PageSize="200" ForeColor="Black">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table table-3d table-striped table-bordered" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" GridLines="None" PageSize="25" OnPageIndexChanging="GridView1_PageIndexChanging" ForeColor="Black">
                     <AlternatingRowStyle BackColor="PaleGoldenrod" />
                     <Columns>
                         <asp:BoundField DataField="Id_Ledger" HeaderText="Id" SortExpression="Id_Ledger" Visible="false" />
