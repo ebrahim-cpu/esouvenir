@@ -24,7 +24,7 @@ namespace eSouvenir
             if (!IsPostBack)
             {
                 ViewState["StockUpdated"] = false;
-                GridView1.PageSize = 50;
+                GridView1.PageSize = 25;
             }
             string id = Request.QueryString["id"];
             if (!string.IsNullOrEmpty(id))
