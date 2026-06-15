@@ -244,7 +244,28 @@
                             beginAtZero: true
                         }
                     }
-                }
+                },
+                plugins: [{
+                    id: 'barLabels',
+                    afterDatasetsDraw(chart, args, options) {
+                        const { ctx, data } = chart;
+                        ctx.save();
+                        ctx.font = "bold 12px 'Outfit', sans-serif";
+                        ctx.fillStyle = "#ffeb3b"; // Golden yellow to match gradient
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'bottom';
+
+                        chart.data.datasets.forEach((dataset, i) => {
+                            chart.getDatasetMeta(i).data.forEach((bar, index) => {
+                                const value = dataset.data[index];
+                                if (value > 0) {
+                                    ctx.fillText(value, bar.x, bar.y - 5);
+                                }
+                            });
+                        });
+                        ctx.restore();
+                    }
+                }]
             });
         });
     </script>
