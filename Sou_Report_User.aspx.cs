@@ -33,7 +33,7 @@ namespace eSouvenir
         private void PopulateYears()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["eSouvenirConnectionString"].ConnectionString;
-            string query = "SELECT DISTINCT YEAR(CreatedDate) AS YearVal FROM Sou_UserRequest WHERE CreatedDate IS NOT NULL AND Pemohon = @Username ORDER BY YearVal DESC";
+            string query = "SELECT DISTINCT YEAR(CreatedDate) AS YearVal FROM Sou_UserRequest WHERE CreatedDate IS NOT NULL ORDER BY YearVal DESC";
             
             ddlYear.Items.Clear();
 
@@ -41,7 +41,6 @@ namespace eSouvenir
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Username", lblUsername.Text);
                     try
                     {
                         conn.Open();
@@ -87,7 +86,7 @@ namespace eSouvenir
             string query = @"
                 SELECT MONTH(CreatedDate) AS MonthNum, SUM(Quantity_Request) AS TotalQty
                 FROM Sou_UserRequest
-                WHERE YEAR(CreatedDate) = @Year AND Pemohon = @Username AND CreatedDate IS NOT NULL
+                WHERE YEAR(CreatedDate) = @Year AND CreatedDate IS NOT NULL
                 GROUP BY MONTH(CreatedDate)";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -95,7 +94,6 @@ namespace eSouvenir
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Year", selectedYear);
-                    cmd.Parameters.AddWithValue("@Username", lblUsername.Text);
                     try
                     {
                         conn.Open();
